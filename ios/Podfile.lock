@@ -1,0 +1,61 @@
+PODS:
+  - Flutter (1.0.0)
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
+  - path_provider (0.0.1):
+    - Flutter
+  - shared_preferences (0.0.1):
+    - Flutter
+  - shared_preferences_macos (0.0.1):
+    - Flutter
+  - shared_preferences_web (0.0.1):
+    - Flutter
+  - sqflite (0.0.1):
+    - Flutter
+    - FMDB (~> 2.7.2)
+  - tinder_card (0.0.1):
+    - Flutter
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - path_provider (from `.symlinks/plugins/path_provider/ios`)
+  - shared_preferences (from `.symlinks/plugins/shared_preferences/ios`)
+  - shared_preferences_macos (from `.symlinks/plugins/shared_preferences_macos/ios`)
+  - shared_preferences_web (from `.symlinks/plugins/shared_preferences_web/ios`)
+  - sqflite (from `.symlinks/plugins/sqflite/ios`)
+  - tinder_card (from `.symlinks/plugins/tinder_card/ios`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - FMDB
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  path_provider:
+    :path: ".symlinks/plugins/path_provider/ios"
+  shared_preferences:
+    :path: ".symlinks/plugins/shared_preferences/ios"
+  shared_preferences_macos:
+    :path: ".symlinks/plugins/shared_preferences_macos/ios"
+  shared_preferences_web:
+    :path: ".symlinks/plugins/shared_preferences_web/ios"
+  sqflite:
+    :path: ".symlinks/plugins/sqflite/ios"
+  tinder_card:
+    :path: ".symlinks/plugins/tinder_card/ios"
+
+SPEC CHECKSUMS:
+  Flutter: 93fdab773cde727b7cef0c53a7aad246b70c2587
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  path_provider: 1248463f198b1e2183f70ce950294a7be7bf0cfc
+  shared_preferences: 951e03d16c6d6060471ed86b259d71ac9ea70b5e
+  shared_preferences_macos: 4df5a9b49855201f55873bc86ea9aa089997b1c7
+  shared_preferences_web: 2f4c1a8c09d6f8fe6e9d35561ea661d5bbbb6b2c
+  sqflite: 16e7c7d61c7268c96cad861cbd6ab31a98133203
+  tinder_card: 2161069f011e036022b91d8e4301c31c2176fa5e
+
+PODFILE CHECKSUM: be5b563906a49f40b52e3181337d687ad3182600
+
+COCOAPODS: 1.6.0.beta.1
