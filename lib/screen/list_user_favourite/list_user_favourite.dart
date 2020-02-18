@@ -8,7 +8,6 @@ class ListUserFavourite extends StatefulWidget {
 }
 
 class _ListUserFavouriteState extends State<ListUserFavourite> {
-
   UserStore userStore = UserStore();
 
   @override
@@ -16,6 +15,7 @@ class _ListUserFavouriteState extends State<ListUserFavourite> {
     super.initState();
     userStore.getFavoriteUsers();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,18 +27,22 @@ class _ListUserFavouriteState extends State<ListUserFavourite> {
   }
 
   buildContent() {
-    return Observer(builder: (_){
-      print('----------------------- ${userStore.favoriteUsers.length}');
-      print('----------------------- ${userStore.favoriteUsers[0].picture}');
-      return ListView.builder(
-          itemCount: userStore.favoriteUsers.length,
-          itemBuilder: (context, index){
-            return userStore.favoriteUsers.length != 0 ? ListTile(
-              leading: Image.network(userStore.favoriteUsers[index].picture),
-              title: Text('${userStore.favoriteUsers[index].name.first} ${userStore.favoriteUsers[index].name.last}'),
-              subtitle: Text('${userStore.favoriteUsers[index].email}'),
-            ): Container();
-          });
-    },);
+    return Observer(
+      builder: (_) {
+        return ListView.builder(
+            itemCount: userStore.favoriteUsers.length,
+            itemBuilder: (context, index) {
+              return userStore.favoriteUsers.length != 0
+                  ? ListTile(
+                      leading:
+                          Image.network(userStore.favoriteUsers[index].picture),
+                      title: Text(
+                          '${userStore.favoriteUsers[index].name.first} ${userStore.favoriteUsers[index].name.last}'),
+                      subtitle: Text('${userStore.favoriteUsers[index].email}'),
+                    )
+                  : Container();
+            });
+      },
+    );
   }
 }

@@ -28,7 +28,6 @@ class _ItemProfileState extends State<ItemProfile> {
   }
 
   initData() {
-    print('start');
     listIcon.add(IconModel(icon: Icons.cloud_circle, isSelected: true));
     listIcon.add(IconModel(icon: Icons.calendar_today, isSelected: false));
     listIcon.add(IconModel(icon: Icons.location_on, isSelected: false));
@@ -38,8 +37,6 @@ class _ItemProfileState extends State<ItemProfile> {
 
   @override
   Widget build(BuildContext context) {
-    print(
-        '------------DATARETURN ${widget.user.name.first} ${widget.user.name.last}');
     return Column(
       children: <Widget>[
         Container(

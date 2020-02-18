@@ -69,10 +69,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
               minHeight: MediaQuery.of(context).size.width * 0.6,
               cardBuilder: (context, index) => Observer(
                 builder: (_) {
-                  print('------------DATA------------$index');
                   return Card(
                       child: userStore.listUsers.length != 0
-                          ? ItemProfile(user: userStore.listUsers[index],)
+                          ? ItemProfile(
+                              user: userStore.listUsers[index],
+                            )
                           : Container());
                 },
               ),
@@ -92,15 +93,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   (CardSwipeOrientation orientation, int index) {
                 /// Get orientation & index of swiped card!
                 if (orientation == CardSwipeOrientation.LEFT) {
-                  print('inininini     $index');
-                  setState(() {
-
-                  });
+                  setState(() {});
                 } else {
                   userStore.addUserToFavourite(userStore.listUsers[index]);
-                  setState(() {
-
-                  });
+                  setState(() {});
                 }
               },
             )),
@@ -122,14 +118,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Observer(builder: (_){
+                Observer(builder: (_) {
                   return Icon(
                     Icons.favorite,
-                    color: userStore.favoriteUsers.length != 0 ? Colors.red : Colors.black26,
+                    color: userStore.favoriteUsers.length != 0
+                        ? Colors.red
+                        : Colors.black26,
                     size: Dimens.icon['icon_step'],
                   );
                 }),
-                Observer(builder: (_){
+                Observer(builder: (_) {
                   return Text('+${userStore.favoriteUsers.length}');
                 })
               ],
@@ -139,26 +137,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
       ],
     );
   }
-
-//  updateContent(User user) {
-//    if (indexIconOnTap == 0) {
-//      content = '${user.name.first} ${user.name.last}';
-//    }
-//    if (indexIconOnTap == 1) {
-//      content =
-//          DateTimeFormatHelper.formatTimestamp(int.parse(user.registered));
-//    }
-//    if (indexIconOnTap == 2) {
-//      content = user.location.street;
-//    }
-//    if (indexIconOnTap == 3) {
-//      content = user.phone;
-//    }
-//    if (indexIconOnTap == 4) {
-//      content = user.password;
-//    }
-//    setState(() {});
-//  }
 
   void navigateListUserFavourite() {
     Navigator.push(

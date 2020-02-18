@@ -14,10 +14,6 @@ abstract class _UserStore with Store {
   bool isShowLoading = false;
 
   @observable
-  String title = '';
-  String content = '';
-
-  @observable
   ObservableList<User> listUsers = ObservableList<User>();
 
   @observable
@@ -37,14 +33,11 @@ abstract class _UserStore with Store {
 
   @action
   parseJsonToListUser(List data) {
-    print('-------------bugUserDAta $data');
     var users = data.map((item) {
       return User.fromLocalJson(item);
     }).toList();
     favoriteUsers.clear();
     favoriteUsers.addAll(users);
-    print('-------------bugUserIIII ${users[0]}');
-    print('-------------bugUser ${favoriteUsers[0].name.first}');
     return favoriteUsers;
   }
 
@@ -61,7 +54,8 @@ abstract class _UserStore with Store {
         usersData.write(user.toJson());
       });
     }
-    String usersString = jsonEncode(favoriteUsers.map((i) => i.toJson()).toList()).toString();
+    String usersString =
+        jsonEncode(favoriteUsers.map((i) => i.toJson()).toList()).toString();
 
     SharedPreferencesHelper.saveStringValue('favorite', usersString);
   }
@@ -73,8 +67,6 @@ abstract class _UserStore with Store {
     ApiResponse apiResponse = await userApi.getRandomUser();
     if (apiResponse.success) {
       listUsers.add(apiResponse.model);
-      title = 'My name is';
-      content = '${listUsers[0].name.first} ${listUsers[0].name.last}';
     }
     isShowLoading = false;
   }
